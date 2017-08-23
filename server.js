@@ -28,28 +28,16 @@ app.use((req, res, next) => {
 //   res.render('maintenance.hbs');
 // });
 
-// registering remote methods
-// client.registerMethod("jsonMethod", "http://m.lowes.com/CatalogServices/product/nvalue/v1_0?nValue=4294857975&maxResults=6&showURL=1&rollUpVariants=1&showUrl=true&storeNumber=0595&priceFlag=rangeBalance&showMarketingBullets=1", "GET");
-// client.methods.jsonMethod(function (data, response) {
-    // response.render('result.hbs', {
-    //   data:data
-    // })
-    // parsed response body as js object
-    // console.log(data);
-    // raw response
-    // products = response;
-    // console.log(response);
-// });
 var args = {
     headers: { "Content-Type": "application/json" }
 };
-client.get("http://m.lowes.com/CatalogServices/product/nvalue/v1_0?nValue=4294857975&maxResults=6&showURL=1&rollUpVariants=1&showUrl=true&storeNumber=0595&priceFlag=rangeBalance&showMarketingBullets=1", args, function (data, response) {
-    // parsed response body as js object
-    console.log(data);
-    products = data;
-    // raw response
-    // console.log(response);
-});
+// client.get("http://m.lowes.com/CatalogServices/product/nvalue/v1_0?nValue=4294857975&maxResults=6&showURL=1&rollUpVariants=1&showUrl=true&storeNumber=0595&priceFlag=rangeBalance&showMarketingBullets=1", args, function (data, response) {
+//     // parsed response body as js object
+//     console.log(data);
+//     products = data;
+//     // raw response
+//     // console.log(response);
+// });
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
